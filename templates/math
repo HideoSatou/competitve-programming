@@ -1,0 +1,44 @@
+ll fact[N], inv[N];
+
+ll sum (ll a, ll b){
+    return (a + b) % mod;
+}
+
+ll sub (ll a, ll b){
+    return (a - b + 2 * mod) % mod; 
+}
+
+ll mul (ll a, ll b){
+    return a * b % mod;
+}
+
+ll div (ll a, ll b){
+    return a * binpow(b, mod - 2) % mod;
+}
+
+ll binpow (ll x, ll pw){
+    if (!pw)
+        return 1LL;
+    if (pw % 2 == 0){
+        ll t = binpow(x, pw / 2);
+        return t * t % mod;
+    }
+    return binpow(x, pw - 1) * x % mod;
+}
+
+ll C (ll n, ll k){
+    return fact[n] * inv[n - k] % mod * inv[k] % mod;
+}
+
+ll A (ll n, ll k){
+    return fact[n] * inv[n - k] % mod;
+}
+
+void calc_fact(){
+    fact[0] = 1;
+    for (ll i = 1; i < N; i++)
+        fact[i] = fact[i - 1] * i % mod;
+    inv[N - 1] = binpow(fact[N - 1], mod - 2);
+    for (ll i = N - 2; i >= 0; i--)
+        inv[i] = inv[i + 1] * (i + 1) % mod;
+}
