@@ -1,0 +1,37 @@
+//#pragma GCC optimization ("O3")
+//#pragma GCC target ("avx2")
+#pragma GCC optimization ("unroll-loops")
+#pragma GCC optimize ("Ofast")
+#pragma GCC target ("avx,avx2,fma")
+
+#include <bits/stdc++.h>
+using namespace std;
+
+#define all(s) s.begin(), s.end()
+#define ok puts("ok")
+#define ll long long
+#define pf push_front
+#define pb push_back
+#define mk make_pair
+#define fr first
+#define sc second
+#define pi pair < int, int >
+#define pl pair < ll, ll >
+#define pii pair < int, pi >
+#define vi vector < int >
+#define vl vector < ll >
+#define vii vector < pi >
+#define vll vector < pl >
+
+#define next next123
+#define right right123
+#define left left123
+#define minus minus123
+#define plus plus123
+
+const int N = 1e6 + 7;
+const int INF = 1e9 + 7;
+
+main(){
+    
+}
